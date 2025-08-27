@@ -1,0 +1,5 @@
+<svg width="44" height="6" viewBox="0 0 44 6" fill="#000" xmlns="http://www.w3.org/2000/svg">
+  <path d="M42 2.5657C36.7507 2.09368 17.643 1.17564 2 2.5657C10.1201 2.5657 20.6998 2.70626 27.5118 4.17056" stroke="#d69e2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <animate attributeName="stroke-dasharray" from="44" to="0" dur="1.5s"></animate>
+  </path>
+</svg>

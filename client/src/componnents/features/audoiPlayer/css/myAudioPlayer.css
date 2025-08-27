@@ -1,0 +1,41 @@
+/* background */
+.custom-player {
+  background-color: var(--text); /* #1e293b;   */
+  /*   border-radius: 20px 80px / 80px 20px;
+ */
+  border-radius: 50px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+/* controls button*/
+.custom-player .rhap_button-clear {
+  color: var(--bgsecondary);
+}
+
+.custom-player .rhap_button-clear:hover {
+  color: var(--bgsecondary);
+}
+
+/* progress */
+.custom-player .rhap_progress-bar {
+  background-color: var(--bgsecondary);
+}
+
+.custom-player .rhap_progress-filled {
+  background-color: var(--bgsecondary);
+}
+
+.custom-player .rhap_download-progress {
+  background-color: #64748b;
+}
+
+/*adui */
+.custom-player .rhap_volume-bar {
+  background-color: #334155;
+}
+
+.custom-player .rhap_volume-indicator {
+  background-color: #d69e2e;
+}
