@@ -37,15 +37,21 @@ const Adia = () => {
                   {keyTranslations[duaTitle] || duaTitle}
                 </h2>
                 <ul>
-                  {data[duaTitle]
-                    .slice(0, sliceEnds[duaTitle] || 2)
-                    .map((duaEle) => (
-                      <li key={duaEle.id}>
-                        <p className=" bg-[var(--bgsecondary)] leading-12 text-2x md:text-3xl my-4 p-4 rounded-2xl shadow-2xs text-xl">
-                          {duaEle.text}
-                        </p>
-                      </li>
-                    ))}
+                  {Array.isArray(data[duaTitle]) ? (
+                    data[duaTitle]
+                      .slice(0, sliceEnds[duaTitle] || 2)
+                      .map((duaEle) => (
+                        <li key={duaEle.id}>
+                          <p className="bg-[var(--bgsecondary)] leading-12 text-2x md:text-3xl my-4 p-4 rounded-2xl shadow-2xs text-xl">
+                            {duaEle.text}
+                          </p>
+                        </li>
+                      ))
+                  ) : (
+                    <p className="text-center text-gray-500">
+                      لا توجد بيانات حالياً
+                    </p>
+                  )}
 
                   <div className="flex gap-3">
                     {data[duaTitle].length <= 1 ? (
