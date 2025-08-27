@@ -3,7 +3,6 @@ const axios = require("axios");
 const cors = require("cors");
 
 const app = express();
-const PORT = 5000;
 
 app.use(cors()); // يسمح لأي موقع يجيب البيانات من السيرفر
 /* endpoint get all quran surah 114  */
@@ -44,6 +43,9 @@ app.get("/api/duas", async (req, res) => {
     }
 });
 
-app.listen(PORT, "localhost", () => {
-    console.log("Server running on http://localhost:" + PORT);
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log("Server running on port " + PORT);
 });
