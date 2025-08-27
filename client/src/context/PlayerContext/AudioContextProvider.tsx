@@ -53,7 +53,7 @@ const AudioContextProvider = ({ children }: { children: ReactNode }) => {
   // fetch audio url
 
   const { data } = UseFetch<string>(
-    surahId !== undefined ? `http://localhost:5000/api/surat/${surahId}` : null,
+    surahId !== undefined ? `/surat/${surahId}` : null,
     selector
   );
   /* السوره التاليه  */
