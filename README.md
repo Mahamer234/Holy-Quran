@@ -57,6 +57,6 @@ vite-plugin-svgr: لاستيراد ملفات SVG كمكونات React.
 
 صور من المشروع : 
 ![lightMode](client/public/themes/light_mode.png)
-![darkMode](./client/public/themes/dark_mode.png)
+![darkMode](client/public/themes/dark_mode.png)
 
 
