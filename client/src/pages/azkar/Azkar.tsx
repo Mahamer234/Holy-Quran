@@ -43,14 +43,14 @@ const Azkar = () => {
       <div className=" px-2 md:px-8">
         <ul>
           {data &&
-            Object.keys(data).map((azkarTitle) => (
+            Object.keys(data).map((azkarTitle) => {
+              if (!Array.isArray(data[azkarTitle])) return null;
               <li key={azkarTitle} className="py-6">
                 <h2 className="text-3xl text-[var(--secondary))]  font-medium bg-[var(--bgsecondary)] my-2 px-4 py-2  rounded-4xl w-fit m-auto">
                   {(data[azkarTitle].length > 0 &&
                     keyTranslations[azkarTitle]) ||
                     azkarTitle}
                 </h2>
-
                 <ul>
                   {data[azkarTitle]
                     .slice(0, sliceEnds[azkarTitle] || 3)
@@ -92,8 +92,8 @@ const Azkar = () => {
                     )}
                   </div>
                 </ul>
-              </li>
-            ))}
+              </li>;
+            })}
         </ul>
       </div>
     </div>
