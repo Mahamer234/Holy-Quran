@@ -31,54 +31,51 @@ const Adia = () => {
       <div className=" px-2 md:px-8">
         {data && (
           <ul>
-            {Object.keys(data).map((duaTitle) => (
-              <li key={duaTitle}>
-                <h2 className="text-3xl   text-[var(--secondary)]  font-medium bg-[var(--bgsecondary)] my-4 px-4 py-2  rounded-4xl w-fit m-auto   ">
-                  {keyTranslations[duaTitle] || duaTitle}
-                </h2>
-                <ul>
-                  {Array.isArray(data[duaTitle]) ? (
-                    data[duaTitle]
+            {Object.keys(data).map((duaTitle) => {
+              if (!Array.isArray(data[duaTitle])) return null;
+              return (
+                <li key={duaTitle}>
+                  <h2 className="text-3xl   text-[var(--secondary)]  font-medium bg-[var(--bgsecondary)] my-4 px-4 py-2  rounded-4xl w-fit m-auto   ">
+                    {keyTranslations[duaTitle] || duaTitle}
+                  </h2>
+                  <ul>
+                    {data[duaTitle]
                       .slice(0, sliceEnds[duaTitle] || 2)
                       .map((duaEle) => (
                         <li key={duaEle.id}>
-                          <p className="bg-[var(--bgsecondary)] leading-12 text-2x md:text-3xl my-4 p-4 rounded-2xl shadow-2xs text-xl">
+                          <p className=" bg-[var(--bgsecondary)] leading-12 text-2x md:text-3xl my-4 p-4 rounded-2xl shadow-2xs text-xl">
                             {duaEle.text}
                           </p>
                         </li>
-                      ))
-                  ) : (
-                    <p className="text-center text-gray-500">
-                      لا توجد بيانات حالياً
-                    </p>
-                  )}
+                      ))}
 
-                  <div className="flex gap-3">
-                    {data[duaTitle].length <= 1 ? (
-                      ""
-                    ) : (
-                      <button
-                        onClick={() => handleShowMore(duaTitle)}
-                        className=" cursor-pointer text-xl animate-pulse hover:animate-none text-[var(--secondary)] font-medium bg-[var(--primary)] my-4 px-4 py-2 rounded-4xl w-fit m-auto"
-                      >
-                        عرض المزيد ..
-                      </button>
-                    )}
+                    <div className="flex gap-3">
+                      {data[duaTitle].length <= 1 ? (
+                        ""
+                      ) : (
+                        <button
+                          onClick={() => handleShowMore(duaTitle)}
+                          className=" cursor-pointer text-xl animate-pulse hover:animate-none text-[var(--secondary)] font-medium bg-[var(--primary)] my-4 px-4 py-2 rounded-4xl w-fit m-auto"
+                        >
+                          عرض المزيد ..
+                        </button>
+                      )}
 
-                    {sliceEnds[duaTitle] > 3 ? (
-                      <button
-                        onClick={() => handleShowLess(duaTitle)}
-                        className=" cursor-pointer text-xl text-[var(--secondary)] font-medium bg-[var(--primary)] my-4 px-4 py-2 rounded-4xl w-fit m-auto"
-                      >
-                        عرض اقل ..
-                      </button>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                </ul>
-              </li>
-            ))}
+                      {sliceEnds[duaTitle] > 3 ? (
+                        <button
+                          onClick={() => handleShowLess(duaTitle)}
+                          className=" cursor-pointer text-xl text-[var(--secondary)] font-medium bg-[var(--primary)] my-4 px-4 py-2 rounded-4xl w-fit m-auto"
+                        >
+                          عرض اقل ..
+                        </button>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  </ul>
+                </li>
+              );
+            })}
           </ul>
         )}
       </div>
