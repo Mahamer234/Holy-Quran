@@ -41,6 +41,7 @@ react-scroll: لتسهيل التمرير السلس بين أقسام الصف�
 react-select: لإنشاء Dropdowns متقدمة.
 
 lottie-react: لعرض الرسوم المتحركة (Animations) داخل الموقع.
+vite-plugin-svgr: لاستيراد ملفات SVG كمكونات React.
 
 
 
@@ -55,9 +56,9 @@ lottie-react: لعرض الرسوم المتحركة (Animations) داخل ال�
 هذا المشروع مفتوح المصدر ويمكن استخدامه لأغراض تعليمية ودعوية.
 
 صور من المشروع : 
-![lightMode](themes/light mode .png)
-![darkMode](themes/dark mode .png)
+![lightMode](themes/light_mode.png)
+![darkMode](themes/dark_mode.png)
 
 
-vite-plugin-svgr: لاستيراد ملفات SVG كمكونات React.
+
 
